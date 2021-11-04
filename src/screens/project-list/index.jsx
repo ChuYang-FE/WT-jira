@@ -1,5 +1,5 @@
 import SearchPanel from './SearchPanel'
-import List from './SearchPanel'
+import List from './List'
 
 export default function ProjectListScreen(params) {
   return (
