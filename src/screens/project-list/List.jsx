@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-export default function List(params) {
+export default function List() {
   return (
-    <div className="" style={{ border: '1px solid black' }}>
+    <div className='x' style={{ border: '1px solid black' }}>
       <table>
         <thead>
           <tr>
@@ -18,5 +18,5 @@ export default function List(params) {
         </tbody>
       </table>
     </div>
-  )
-};
+  );
+}

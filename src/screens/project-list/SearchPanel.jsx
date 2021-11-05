@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export default function SearchPanel(params) {
+export default function SearchPanel() {
   return (
     <form>
       <input type="text" />
@@ -10,5 +10,5 @@ export default function SearchPanel(params) {
         <option value="3">3</option>
       </select>
     </form>
-  )
-};
+  );
+}
