@@ -5,7 +5,7 @@ export default function SearchPanel({users, param, setParam}) {
   const search = (type, value) => {
     setParam({
       ...param,
-      type: value
+      [type]: value
     });
   };
 
