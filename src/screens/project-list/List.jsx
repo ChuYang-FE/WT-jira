@@ -13,16 +13,14 @@ export default function List({ users, list }) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {
-              list.map(project => (
-                <tr key={project.personId}>
-                  <td>{project.name}</td>
-                  <td>{users.find(user => user.id === project.personId)?.name || '未知'}</td>
-                </tr>
-              ))
-            }
-          </tr>
+          {
+            list.map(project => (
+              <tr key={project.id}>
+                <td>{project.name}</td>
+                <td>{users.find(user => user.id === project.personId)?.name || '未知'}</td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
     </div>
