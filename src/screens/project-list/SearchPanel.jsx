@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function SearchPanel({users, param, setParam}) {
+export default function SearchPanel({ users, param, setParam }) {
   const search = (type, value) => {
     setParam({
       ...param,
-      [type]: value
+      [type]: value,
     });
   };
 
@@ -14,17 +14,17 @@ export default function SearchPanel({users, param, setParam}) {
       <input
         type="text"
         value={param.name}
-        onChange={e => search('name', e.target.value)}
+        onChange={(e) => search('name', e.target.value)}
       />
-      <select 
+      <select
         value={param.personId}
-        onChange={e => search('personId', e.target.value)}
+        onChange={(e) => search('personId', e.target.value)}
       >
-        {
-          users.map(user => (
-            <option value={user.id} key={user.id}>{user.name}</option>
-          ))
-        }
+        {users.map((user) => (
+          <option value={user.id} key={user.id}>
+            {user.name}
+          </option>
+        ))}
       </select>
     </form>
   );

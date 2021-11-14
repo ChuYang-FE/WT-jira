@@ -4,9 +4,10 @@
     "es2021": true
   },
   "extends": [
+    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -24,10 +25,6 @@
     "semi": [
       "error",
       "always"
-    ],
-    "quotes": [
-      "error",
-      "single"
     ]
   }
 }

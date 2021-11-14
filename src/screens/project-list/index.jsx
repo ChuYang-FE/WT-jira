@@ -37,8 +37,8 @@ export default function ProjectListScreen() {
 
   return (
     <div>
-      <SearchPanel users={users} param={param} setParam={setParam}/>
-      <List users={users} list={list}/>
+      <SearchPanel users={users} param={param} setParam={setParam} />
+      <List users={users} list={list} />
     </div>
   );
 }

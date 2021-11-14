@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 export default function List({ users, list }) {
   return (
-    <div className='x' style={{ border: '1px solid black' }}>
+    <div className="x" style={{ border: '1px solid black' }}>
       <table>
         <thead>
           <tr>
@@ -13,14 +12,15 @@ export default function List({ users, list }) {
           </tr>
         </thead>
         <tbody>
-          {
-            list.map(project => (
-              <tr key={project.id}>
-                <td>{project.name}</td>
-                <td>{users.find(user => user.id === project.personId)?.name || '未知'}</td>
-              </tr>
-            ))
-          }
+          {list.map((project) => (
+            <tr key={project.id}>
+              <td>{project.name}</td>
+              <td>
+                {users.find((user) => user.id === project.personId)?.name ||
+                  '未知'}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
