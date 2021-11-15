@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useMount, useDebounce } from '../../utils';
 import qs from 'qs';
 
 import SearchPanel from './SearchPanel';
@@ -17,22 +18,25 @@ export default function ProjectListScreen() {
     personId: '',
   });
 
-  useEffect(() => {
-    getList('projects', setList);
+  useMount(() => {
     getList('users', setUsers);
-  }, []);
+  });
+
+  const debounceParam = useDebounce(param, 500);
 
   useEffect(() => {
     getList('projects', setList);
-  }, [param]);
+  }, [debounceParam]);
 
   const getList = (type, callBack) => {
-    fetch(`${apiUrl}/${type}?${qs.stringify(cleanObject(param))}`).then(async res => {
-      if(res.ok) {
-        const resList = await res.json();
-        callBack(resList);
-      }
-    });
+    fetch(`${apiUrl}/${type}?${qs.stringify(cleanObject(debounceParam))}`).then(
+      async (res) => {
+        if (res.ok) {
+          const resList = await res.json();
+          callBack(resList);
+        }
+      },
+    );
   };
 
   return (
