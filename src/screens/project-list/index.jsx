@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useMount, useDebounce } from '../../utils';
 import qs from 'qs';
 
-import SearchPanel from './SearchPanel';
 import List from './List';
+import SearchPanel from './SearchPanel';
 
-import { cleanObject } from '../../utils/index.js';
+import { cleanObject } from '../../utils';
+import { useMount, useDebounce } from '../../utils';
 
 // eslint-disable-next-line no-undef
 const apiUrl = process.env.REACT_APP_API_URL;
