@@ -4,8 +4,8 @@
     "es2021": true
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "prettier"
   ],
@@ -25,6 +25,7 @@
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "no-var": "error"
   }
 }
