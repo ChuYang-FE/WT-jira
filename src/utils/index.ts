@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 
+/* 
+当对象的值为空（不包括0），则过滤掉。
+Delete those values that are isFalsy(except 0)
+*/
 const isFalsy = (value) => (value === 0 ? false : !value);
 
-// 当对象的值为空（不包括0），则过滤掉。
 export const cleanObject = (object) => {
   const result = { ...object };
   Object.keys(result).forEach((key) => {
@@ -20,15 +23,17 @@ export const useMount = (callback) => {
   }, []);
 };
 
-// export const debounce = (func, delay) => {
-//   let timer;
-//   return () => {
-//     if (timer) {
-//       clearTimeout(timer);
-//     }
-//     timer = setTimeout(() => func(), delay);
-//   };
-// };
+/* 
+export const debounce = (func, delay) => {
+  let timer;
+  return () => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => func(), delay);
+  };
+};
+*/
 
 export const useDebounce = (value, delay) => {
   const [debounceValue, setDebounceValue] = useState(value);

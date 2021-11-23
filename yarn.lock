@@ -1946,6 +1946,11 @@
   "resolved" "https://registry.npmjs.org/@types/q/-/q-1.5.4.tgz"
   "version" "1.5.4"
 
+"@types/qs@^6.9.7":
+  "integrity" "sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw=="
+  "resolved" "https://registry.npmjs.org/@types/qs/-/qs-6.9.7.tgz"
+  "version" "6.9.7"
+
 "@types/react-dom@^17.0.0":
   "integrity" "sha1-1pcuwBjSPPIrmVl/Eok0PZnqnZ0="
   "resolved" "https://registry.npmmirror.com/@types/react-dom/download/@types/react-dom-17.0.10.tgz"
