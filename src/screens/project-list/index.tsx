@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useMount, useDebounce } from '../../utils';
 import qs from 'qs';
 
-import SearchPanel from './SearchPanel';
 import List from './List';
+import SearchPanel from './SearchPanel';
 
 import { cleanObject } from '../../utils/index';
+import { useMount, useDebounce } from '../../utils';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -27,7 +27,7 @@ export default function ProjectListScreen() {
     getList('projects', setList);
   }, [debounceParam]);
 
-  const getList = (type, callBack) => {
+  const getList = (type: string, callBack: any): void => {
     fetch(`${apiUrl}/${type}?${qs.stringify(cleanObject(debounceParam))}`).then(
       async (res) => {
         if (res.ok) {
