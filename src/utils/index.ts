@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 当对象的值为空（不包括0），则过滤掉。
 Delete those values that are isFalsy(except 0)
 */
-const isFalsy = (value) => (value === 0 ? false : !value);
+const isFalsy = (value: unknown) => (value === 0 ? false : !value);
 
-export const cleanObject = (object) => {
+export const cleanObject = (object: any) => {
   const result = { ...object };
   Object.keys(result).forEach((key) => {
     const value = result[key];
@@ -17,7 +17,7 @@ export const cleanObject = (object) => {
   return result;
 };
 
-export const useMount = (callback) => {
+export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
   }, []);
@@ -35,7 +35,7 @@ export const debounce = (func, delay) => {
 };
 */
 
-export const useDebounce = (value, delay) => {
+export const useDebounce = (value: unknown, delay?: number) => {
   const [debounceValue, setDebounceValue] = useState(value);
 
   useEffect(() => {

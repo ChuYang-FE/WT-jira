@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import qs from 'qs';
 
-import List from './List';
-import SearchPanel from './SearchPanel';
+import { List } from './List';
+import { SearchPanel } from './SearchPanel';
 
 import { cleanObject } from '../../utils/index';
 import { useMount, useDebounce } from '../../utils';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-export default function ProjectListScreen() {
+export const ProjectListScreen = () => {
   const [list, setList] = useState([]);
   const [users, setUsers] = useState([]);
   const [param, setParam] = useState({
@@ -21,7 +21,7 @@ export default function ProjectListScreen() {
     getList('users', setUsers);
   });
 
-  const debounceParam = useDebounce(param, 500);
+  const debounceParam = useDebounce(param, 200);
 
   useEffect(() => {
     getList('projects', setList);
@@ -44,4 +44,4 @@ export default function ProjectListScreen() {
       <List users={users} list={list} />
     </div>
   );
-}
+};

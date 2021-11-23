@@ -1,7 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function List({ users, list }) {
+import { User } from './SearchPanel';
+
+interface Project {
+  id: string;
+  name: string;
+  personId: string;
+  organization: string;
+  created: number;
+}
+
+interface ListProps {
+  list: Project[];
+  users: User[];
+}
+
+export const List = ({ users, list }: ListProps) => {
   return (
     <div className="x" style={{ border: '1px solid black' }}>
       <table>
@@ -25,7 +40,7 @@ export default function List({ users, list }) {
       </table>
     </div>
   );
-}
+};
 
 List.propTypes = {
   users: PropTypes.array,
