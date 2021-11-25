@@ -5108,10 +5108,10 @@
   dependencies:
     "prettier-linter-helpers" "^1.0.0"
 
-"eslint-plugin-react-hooks@^4.0.8", "eslint-plugin-react-hooks@^4.2.0":
-  "integrity" "sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz"
-  "version" "4.2.0"
+"eslint-plugin-react-hooks@^4.0.8", "eslint-plugin-react-hooks@^4.2.0", "eslint-plugin-react-hooks@^4.3.0":
+  "integrity" "sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz"
+  "version" "4.3.0"
 
 "eslint-plugin-react@^7.20.3", "eslint-plugin-react@^7.21.5", "eslint-plugin-react@^7.26.1":
   "integrity" "sha512-Lug0+NOFXeOE+ORZ5pbsh6mSKjBKXDXItUD2sQoT+5Yl0eoT82DqnXeTMfUare4QVCn9QwXbfzO/dBLjLXwVjQ=="
@@ -5214,7 +5214,7 @@
     "normalize-path" "^3.0.0"
     "schema-utils" "^3.0.0"
 
-"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^5 || ^6 || ^7", "eslint@^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.0.0", "eslint@^7.1.0", "eslint@^7.11.0", "eslint@^7.32.0", "eslint@^7.5.0", "eslint@>= 4.12.1", "eslint@>=5", "eslint@>=7.0.0", "eslint@>=7.28.0":
+"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^5 || ^6 || ^7", "eslint@^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.0.0", "eslint@^7.1.0", "eslint@^7.11.0", "eslint@^7.32.0", "eslint@^7.5.0", "eslint@>= 4.12.1", "eslint@>=5", "eslint@>=7.0.0", "eslint@>=7.28.0":
   "integrity" "sha1-xtMooUvj+wjI0dIeEsAv23oqgS0="
   "resolved" "https://registry.npmmirror.com/eslint/download/eslint-7.32.0.tgz?cache=0&sync_timestamp=1637476562923&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint%2Fdownload%2Feslint-7.32.0.tgz"
   "version" "7.32.0"

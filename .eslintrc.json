@@ -17,17 +17,34 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  /* 
+  先在项目中下载安装要引入的插件，配置文件中使用 plugins 关键字来存放插件名字的列表。
+  插件名称可以省略 eslint-plugin- 前缀。
+  */
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint",
     "prettier"
   ],
   "rules": {
+    /*
+    "off" 或 0 - 关闭规则
+    "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
+    "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
+    */
     "semi": [
-      "error",
+      2,
       "always"
     ],
-    "no-var": "error",
-    "prettier/prettier": "error"
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
+    "no-var": 2,
+    "prettier/prettier": 2
   }
 }
