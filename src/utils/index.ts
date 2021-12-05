@@ -35,7 +35,7 @@ export const debounce = (func, delay) => {
 };
 */
 
-export const useDebounce = (value: unknown, delay?: number) => {
+export const useDebounce = <V>(value: V, delay?: number) => {
   const [debounceValue, setDebounceValue] = useState(value);
 
   useEffect(() => {
