@@ -1,9 +1,27 @@
 import React, { FormEvent } from 'react';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export const Login = () => {
+  const login = (param: { username: string; pwd: string }) => {
+    fetch(`${apiUrl}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(param),
+    }).then(async (res) => {
+      if (res.ok) {
+        console.log('login successfully');
+      }
+    });
+  };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('click submit');
+    const username = (e.currentTarget.elements[0] as HTMLInputElement).value;
+    const pwd = (e.currentTarget.elements[1] as HTMLInputElement).value;
+    login({ username, pwd });
   };
 
   return (
