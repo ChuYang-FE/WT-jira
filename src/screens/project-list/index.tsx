@@ -29,9 +29,9 @@ export const ProjectListScreen = () => {
 
   const getList = (type: string, callBack: any): void => {
     fetch(`${apiUrl}/${type}?${qs.stringify(cleanObject(debounceParam))}`).then(
-      async (res) => {
-        if (res.ok) {
-          const resList = await res.json();
+      async (response) => {
+        if (response.ok) {
+          const resList = await response.json();
           callBack(resList);
         }
       },

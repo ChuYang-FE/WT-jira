@@ -6,10 +6,10 @@ import { TsReactTest } from './screens/ts-test';
 function App() {
   return (
     <div className="App">
-      <ProjectListScreen />
+      {/* <ProjectListScreen />
       <hr />
       <TsReactTest />
-      <hr />
+      <hr /> */}
       <Login />
     </div>
   );

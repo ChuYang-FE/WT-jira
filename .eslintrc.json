@@ -43,6 +43,9 @@
       2,
       "always"
     ],
+    // 免 import React from 'react'
+    "react/jsx-uses-react": 0,
+    "react/react-in-jsx-scope": 0,
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
     "no-var": 2,
