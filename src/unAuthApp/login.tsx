@@ -22,7 +22,7 @@ export const Login = () => {
           token：{user?.token}
         </div>
       ) : (
-        '请登录'
+        ''
       )}
       <div>
         <label htmlFor="username">用户名：</label>
