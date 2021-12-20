@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import qs from 'qs';
+import { useState, useEffect } from 'react';
 
 import { List } from './List';
 import { SearchPanel } from './SearchPanel';
 
 import { cleanObject } from '../../utils/index';
+import { useHttp } from '../../utils/http';
 import { useMount, useDebounce } from '../../utils';
-
-const apiUrl = process.env.REACT_APP_API_URL;
 
 export const ProjectListScreen = () => {
   const [list, setList] = useState([]);
@@ -17,26 +15,17 @@ export const ProjectListScreen = () => {
     personId: '',
   });
 
+  const getData = useHttp();
+
   useMount(() => {
-    getList('users', setUsers);
+    getData('users').then(setUsers);
   });
 
   const debounceParam = useDebounce(param, 200);
 
   useEffect(() => {
-    getList('projects', setList);
+    getData('projects', { data: cleanObject(debounceParam) }).then(setList);
   }, [debounceParam]);
-
-  const getList = (type: string, callBack: any): void => {
-    fetch(`${apiUrl}/${type}?${qs.stringify(cleanObject(debounceParam))}`).then(
-      async (response) => {
-        if (response.ok) {
-          const resList = await response.json();
-          callBack(resList);
-        }
-      },
-    );
-  };
 
   return (
     <div>

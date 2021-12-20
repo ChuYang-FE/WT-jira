@@ -6,7 +6,11 @@ Delete those values that are isFalsy(except 0)
 */
 const isFalsy = (value: unknown) => (value === 0 ? false : !value);
 
-export const cleanObject = (object: any) => {
+interface UnknownObj {
+  [propName: string]: unknown;
+}
+
+export const cleanObject = (object: UnknownObj) => {
   const result = { ...object };
   Object.keys(result).forEach((key) => {
     const value = result[key];

@@ -1,16 +1,22 @@
-import * as auth from 'authProvider';
 import qs from 'qs';
+
+import * as auth from 'authProvider';
+import { useAuth } from 'context/AuthContext';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
+interface SearchObj {
+  name?: '';
+  personId?: '';
+}
 interface CustomConfig extends RequestInit {
-  data?: object;
+  data?: SearchObj;
   token?: string;
 }
 
 export const http = (
   endpoint: string,
-  { data, token, headers, ...customConfig }: CustomConfig,
+  { data, token, headers, ...customConfig }: CustomConfig = {},
 ) => {
   const config = {
     method: 'GET',
@@ -42,4 +48,10 @@ export const http = (
         return Promise.reject(data);
       }
     });
+};
+
+export const useHttp = () => {
+  const { user } = useAuth();
+  return (...[endPoint, config]: Parameters<typeof http>) =>
+    http(endPoint, { ...config, token: user?.token });
 };

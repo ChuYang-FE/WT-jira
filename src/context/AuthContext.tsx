@@ -2,6 +2,8 @@ import React, { ReactNode, useState } from 'react';
 
 import * as auth from 'authProvider';
 import { User } from 'screens/project-list/SearchPanel';
+import { http } from 'utils/http';
+import { useMount } from 'utils';
 
 const AuthContext = React.createContext<
   | {
@@ -20,12 +22,26 @@ interface AuthForm {
   password: string;
 }
 
+const initUser = async () => {
+  let user = null;
+  const token = auth.getToken();
+  if (token) {
+    const data = await http('me', { token });
+    user = data.user;
+  }
+  return user;
+};
+
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
   const login = (form: AuthForm) => auth.login(form).then(setUser);
   const register = (form: AuthForm) => auth.register(form).then(setUser);
   const logout = () => auth.logout().then(() => setUser(null));
+
+  useMount(() => {
+    initUser().then(setUser);
+  });
 
   return (
     <AuthContext.Provider value={{ user, login, register, logout }}>
