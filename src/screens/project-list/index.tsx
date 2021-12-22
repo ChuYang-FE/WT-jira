@@ -7,7 +7,7 @@ import { cleanObject } from '../../utils/index';
 import { useHttp } from '../../utils/http';
 import { useMount, useDebounce } from '../../utils';
 
-export const ProjectListScreen = () => {
+export const ProjectListScreen: React.FC = () => {
   const [list, setList] = useState([]);
   const [users, setUsers] = useState([]);
   const [param, setParam] = useState({

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Login } from './login';
 import { Register } from './register';
 
-export const UnAuthApp = () => {
+export const UnAuthApp: React.FC = () => {
   const [isRegistered, setIsRegistered] = useState(false);
   return (
     <div>

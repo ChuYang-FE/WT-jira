@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
 import { useAuth } from 'context/AuthContext';
 
-export const Login = () => {
+export const Login: React.FC = () => {
   const { login, user } = useAuth();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

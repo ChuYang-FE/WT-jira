@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { AuthProvider } from './AuthContext';
 
 export const AppProviders = ({ children }: { children: ReactNode }) => {
