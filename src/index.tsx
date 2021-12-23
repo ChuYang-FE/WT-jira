@@ -7,6 +7,9 @@ import { AppProviders } from 'context';
 import reportWebVitals from './reportWebVitals';
 import { loadDevTools } from 'jira-dev-tool';
 
+// after jira-dev-tool
+import 'antd/dist/antd.less';
+
 loadDevTools(() =>
   // eslint-disable-next-line react/no-render-return-value
   ReactDOM.render(
