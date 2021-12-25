@@ -1,4 +1,5 @@
-import { Button, Form, Input } from 'antd';
+import { Form, Input } from 'antd';
+import { LongBtn } from 'unAuthApp';
 import { useAuth } from 'context/AuthContext';
 
 export const Register: React.FC = () => {
@@ -27,9 +28,9 @@ export const Register: React.FC = () => {
       <Form.Item>
         <Input placeholder="密码" type="password" id="password" />
       </Form.Item>
-      <Button htmlType="submit" type="primary">
+      <LongBtn htmlType="submit" type="primary">
         注册
-      </Button>
+      </LongBtn>
     </Form>
   );
 };
