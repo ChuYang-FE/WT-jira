@@ -1,4 +1,4 @@
-import { Input, Select } from 'antd';
+import { Form, Input, Select } from 'antd';
 import PropTypes from 'prop-types';
 
 export interface User {
@@ -27,25 +27,30 @@ export const SearchPanel = ({ users, param, setParam }: SearchPanelProps) => {
   };
 
   return (
-    <form>
-      <Input
-        type="text"
-        value={param.name}
-        onChange={(e) => search('name', e.target.value)}
-      />
-      <Select
-        placeholder="负责人"
-        value={param.personId}
-        onChange={(value) => search('personId', value)}
-      >
-        <Select.Option value="">负责人</Select.Option>
-        {users.map((user) => (
-          <Select.Option value={user.id} key={user.id}>
-            {user.name}
-          </Select.Option>
-        ))}
-      </Select>
-    </form>
+    <Form style={{ marginBottom: '2rem' }} layout="inline">
+      <Form.Item>
+        <Input
+          placeholder="项目名"
+          type="text"
+          value={param.name}
+          onChange={(e) => search('name', e.target.value)}
+        />
+      </Form.Item>
+      <Form.Item>
+        <Select
+          placeholder="负责人"
+          value={param.personId}
+          onChange={(value) => search('personId', value)}
+        >
+          <Select.Option value="">负责人</Select.Option>
+          {users.map((user) => (
+            <Select.Option value={user.id} key={user.id}>
+              {user.name}
+            </Select.Option>
+          ))}
+        </Select>
+      </Form.Item>
+    </Form>
   );
 };
 
