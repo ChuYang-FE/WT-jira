@@ -19,7 +19,7 @@ export const UnAuthApp: React.FC = () => {
           {isRegistered ? <Login /> : <Register />}
           <Divider />
           <a onClick={() => setIsRegistered(!isRegistered)}>
-            {isRegistered ? '已经有账号了？直接登录' : '没有账号？注册新账号'}
+            {isRegistered ? '没有账号？注册新账号' : '已经有账号了？直接登录'}
           </a>
         </ShadowCard>
       </Container>
