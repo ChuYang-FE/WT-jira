@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Mock Jira
+
+A simplyfied Jira project by using React Hook and TS. 
+
+NB: Practice only. 🤣
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
