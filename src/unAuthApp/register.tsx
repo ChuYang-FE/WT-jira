@@ -22,10 +22,10 @@ export const Register: React.FC = () => {
       ) : (
         ''
       )}
-      <Form.Item>
+      <Form.Item name="username">
         <Input placeholder="用户名" type="text" id="username" />
       </Form.Item>
-      <Form.Item>
+      <Form.Item name="password">
         <Input placeholder="密码" type="password" id="password" />
       </Form.Item>
       <LongBtn htmlType="submit" type="primary">

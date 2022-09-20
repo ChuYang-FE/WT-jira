@@ -21,10 +21,11 @@ export const ProjectListScreen: React.FC = () => {
     getData('users').then(setUsers);
   });
 
-  const debounceParam = useDebounce(param, 200);
+  const debounceParam = useDebounce(param, 350);
 
   useEffect(() => {
     getData('projects', { data: cleanObject(debounceParam) }).then(setList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debounceParam]);
 
   return (

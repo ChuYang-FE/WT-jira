@@ -16,7 +16,7 @@ interface CustomConfig extends RequestInit {
 
 export const http = (
   endpoint: string,
-  { data, token, headers, ...customConfig }: CustomConfig = {},
+  { data, token, ...customConfig }: CustomConfig = {},
 ) => {
   const config = {
     method: 'GET',
