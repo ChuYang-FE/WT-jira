@@ -1,4 +1,3 @@
-import React from 'react';
 import { useArray, useMount } from '../../utils';
 
 interface Person {

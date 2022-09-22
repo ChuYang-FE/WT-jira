@@ -5,15 +5,14 @@ import { User } from 'screens/project-list/SearchPanel';
 import { http } from 'utils/http';
 import { useMount } from 'utils';
 
-const AuthContext = React.createContext<
-  | {
-      user: User | null;
-      register: (form: AuthForm) => Promise<void>;
-      login: (form: AuthForm) => Promise<void>;
-      logout: () => Promise<void>;
-    }
-  | undefined
->(undefined);
+interface IContext {
+  user: User | null;
+  register: (form: AuthForm) => Promise<void>;
+  login: (form: AuthForm) => Promise<void>;
+  logout: () => Promise<void>;
+}
+
+const AuthContext = React.createContext<IContext | undefined>(undefined);
 
 AuthContext.displayName = 'AuthContext'; // for dev-tool
 
